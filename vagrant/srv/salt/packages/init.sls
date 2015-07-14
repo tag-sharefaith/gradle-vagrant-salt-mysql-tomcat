@@ -1,0 +1,4 @@
+include:
+  - .purge
+  - .upgrade
+  - .install

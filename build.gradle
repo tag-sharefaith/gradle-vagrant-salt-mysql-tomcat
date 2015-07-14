@@ -1,8 +1,20 @@
-apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: 'com.bmuschko.vagrant'
 
 sourceCompatibility = 1.5
 version = '1.0'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-vagrant-plugin:2.0'
+    }
+}
+
 jar {
     manifest {
         attributes 'Implementation-Title': 'Gradle Quickstart',
@@ -29,4 +41,9 @@ uploadArchives {
            dirs 'repos'
        }
     }
+}
+
+task saltHighstate(type: Exec) {
+	description 'Run Salt highstate.'
+	commandLine 'vagrant', 'ssh', '--command', 'sudo salt-call --local state.highstate'
 }
