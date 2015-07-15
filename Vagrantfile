@@ -26,5 +26,10 @@ Vagrant.configure(2) do |config|
   end
   
   config.vm.synced_folder "vagrant/home/vagrant/.config/", "/home/vagrant/.config/"
+  config.vm.synced_folder "build/libs/", "/var/lib/tomcat7/webapps/",
+    # tomcat7 user must be allowed to extract war; however, the
+    # user may not exist when the folder is first synchronized,
+    # or I would change the owner and group to tomcat7 instead.
+    mount_options: ["dmode=777,fmode=666"], create: true
   
 end
