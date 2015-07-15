@@ -6,3 +6,4 @@ install:
       - 'nano'
       - 'rsync'
       - 'screen'
+      - 'unzip'
