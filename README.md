@@ -19,12 +19,9 @@ The MySQL and Tomcat formulas can be managed by editing their respective pillar 
 ## SaltStack Formulas
 Formulas must be manually installed in ./vagrant/srv/formulas/, e.g.
 ```bash
-mkdir -p vagrant/srv/formulas/
-mkdir -p ~/git/mysql-formula/
-git clone https://github.com/saltstack-formulas/mysql-formula.git ~/git/mysql-formula/
-ln -s ~/git/mysql-formula vagrant/srv/formulas/
-mkdir -p ~/git/tomcat-formula/
-git clone https://github.com/saltstack-formulas/tomcat-formula.git ~/git/tomcat-formula/
-ln -s ~/git/tomcat-formula vagrant/srv/formulas/
+mkdir -p vagrant/srv/formulas/mysql-formula/
+git clone https://github.com/saltstack-formulas/mysql-formula.git vagrant/srv/formulas/mysql-formula/
+mkdir -p vagrant/srv/formulas/tomcat-formula/
+git clone https://github.com/saltstack-formulas/tomcat-formula.git vagrant/srv/formulas/tomcat-formula/
 ```
 
