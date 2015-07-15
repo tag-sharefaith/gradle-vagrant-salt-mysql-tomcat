@@ -25,3 +25,9 @@ mkdir -p vagrant/srv/formulas/tomcat-formula/
 git clone https://github.com/saltstack-formulas/tomcat-formula.git vagrant/srv/formulas/tomcat-formula/
 ```
 
+Edit vagrant/srv/formulas/tomcat-formula/tomcat/init.sls
+```yaml
+include:
+  - tomcat.package
+  - tomcat.manager
+```
